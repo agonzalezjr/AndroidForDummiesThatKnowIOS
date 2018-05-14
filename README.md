@@ -4,6 +4,8 @@ Just trying to keep some concepts straight in my 🧠 as I learn Android develop
 
 (Was going to call it "Android By Andres" because that just rolls off the tongue.)
 
+This is the best landing page I have found so far for introductions: https://www.raywenderlich.com/category/android
+
 ## App Config
 
 ### iOS
