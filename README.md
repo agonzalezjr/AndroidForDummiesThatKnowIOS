@@ -90,10 +90,33 @@ Target-Activity::onResume()
 Home-Activity::onStop()
 ```
 
-## TODO
+## Composition
 
-Other "App Components":
+### iOS
+
+Nested View Controllers
+
+### Android
+
+Fragments
+
+## Lists
+
+### iOS
+
+UITableViewController displays a UITableView (and it uses a UITableViewDataSource and UITableViewDelegate)
+
+### Android
+
+_OLD:_ Activity displays ListView (and it uses an Adapter (both data source and cell view provider))
+
+_NEW:_ Recycling
+
+## TODO
 
 - Services
 - Broadcast receivers
-- Content providers
+- Content providers (Cursors?)
+- Screen sizes and pixel densities
+- ActionBar buttons/menus and overflows
+- Dialog vs Toast vs Popups
