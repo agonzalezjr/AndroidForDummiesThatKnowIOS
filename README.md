@@ -55,9 +55,40 @@ startActivity(intent);
 // startActivityForResult() (when you want the activity to return a result).
 ```
 
-Intent-filters can be used to let the system pick out the target automatically. Useful for cross-app communications.
+Intent-filters can be used to let the system pick out the target automatically. Useful for cross-app communications. Example:
+
+```java
+// Create the text message with a string
+Intent sendIntent = new Intent(); // note there are no params
+sendIntent.setAction(Intent.ACTION_SEND);
+sendIntent.setType("text/plain");
+sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+// Start the activity
+startActivity(sendIntent);
+```
 
 **Intent message is asynchronous.**
+
+## View Lifecycle
+
+|iOS|Android|
+|---|-------|
+|viewDidLoad|onCreate()|
+|viewWillAppear|onStart() (onRestart())|
+|viewDidAppear|onResume()|
+|viewWillDisappear|onPause()|
+|viewDidDisappear|onStop()|
+|old unload|onDestroy()|
+
+When launching an activity from another, this is the flow:
+
+```text
+Home-Activity::onPause()
+Target-Activity::onCreate()
+Target-Activity::onStart()
+Target-Activity::onResume()
+Home-Activity::onStop()
+```
 
 ## TODO
 
