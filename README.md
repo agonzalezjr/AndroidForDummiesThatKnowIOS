@@ -106,13 +106,21 @@ Fragments
 
 ### iOS
 
-UITableViewController displays a UITableView (and it uses a UITableViewDataSource and UITableViewDelegate)
+`UITableViewController` displays a `UITableView` (and it uses a `UITableViewDataSource` and `UITableViewDelegate`)
 
 ### Android
 
-_OLD:_ Activity displays ListView (and it uses an Adapter (both data source and cell view provider))
+_OLD:_ No recycling: `Activity` displays `ListView` (and it uses an `Adapter` (both data source and cell view provider))
 
-_NEW:_ Recycling
+_NEW:_ Recycling: `Activity` displays `RecyclerView` (it uses an `Adapter`, a `ViewHolder`, and a `LayoutManager`)
+
+- When implementing the `Adapter`:
+  - Use a subclass of `RecyclerView.Adapter<ViewHolder>`
+  - Implement your `ViewHolder` (usually a nested class of the `Adapter`)
+    - `onCreateViewHolder` called when there aren't view holders available to recycle. Note there is no "position" here at all
+    - `onBindViewHolder` called when a new item will be available on screen for a specific position and the holder needs some data
+- Item selection is responsibility of each item/view instead of the recycler view
+  - However, the recycler view can have attached an `ItemTouchHelper` to handle swipe/move gestures on each item
 
 ## TODO
 
