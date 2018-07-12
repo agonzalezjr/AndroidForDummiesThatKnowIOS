@@ -1,4 +1,4 @@
-# Android For Dummies That Know iOS
+# Android For Dummies That Kinda "Know" iOS
 
 Just trying to keep some concepts straight in my 🧠 as I learn Android development.
 
@@ -122,11 +122,21 @@ _NEW:_ Recycling: `Activity` displays `RecyclerView` (it uses an `Adapter`, a `V
 - Item selection is responsibility of each item/view instead of the recycler view
   - However, the recycler view can have attached an `ItemTouchHelper` to handle swipe/move gestures on each item
 
+## Bar Buttons
+
+### iOS
+
+`UINavigationBar` has `UINavigationItem` whith `leftButtons` and `rightButtons`.
+
+### Android
+
+`Activity` has a `Toolbar` and a `MenuInflater` is used to put the buttons there usually from an XML fragment.
+
+`Activity` has top-lever handler for button clicks `onOptionsItemSelected(MenuItem item)`.
+
 ## TODO
 
 - Services
 - Broadcast receivers
 - Content providers (Cursors?)
 - Screen sizes and pixel densities
-- ActionBar buttons/menus and overflows
-- Dialog vs Toast vs Popups
