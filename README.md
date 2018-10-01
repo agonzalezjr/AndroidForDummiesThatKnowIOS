@@ -134,6 +134,27 @@ _NEW:_ Recycling: `Activity` displays `RecyclerView` (it uses an `Adapter`, a `V
 
 `Activity` has top-lever handler for button clicks `onOptionsItemSelected(MenuItem item)`.
 
+## Screen Measurements
+
+### iOS
+
+Logical Points for everything to abstract out the idea of resolution.
+
+### Android
+
+`dp` or `dip` for density independent measurements.
+
+Conversion:
+
+```java
+dpi = getResources().getDisplayMetrics().density;
+px = dp * (dpi / 160)
+```
+
+`dpi` equals 1.0; on a high-density screen it equals 1.5; on an extra-high-density screen, it equals 2.0; and on a low-density screen, it equals 0.75.
+
+https://developer.android.com/training/multiscreen/screensizes
+
 ## TODO
 
 - Services
